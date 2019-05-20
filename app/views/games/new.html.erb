@@ -1,0 +1,19 @@
+<h1>NEW GAME</h1>
+<div class="letters">
+  <ul id="menu">
+    <% @letters.each do |letter| %>
+    <li><%= letter %></li>
+    <% end %>
+  </ul>
+</div>
+
+
+<form class="form-inline" action="/score" method="get">
+  <div class="form-group mx-sm-3 mb-2">
+      <%= hidden_field_tag :grid, @letters.join %>
+      <%= hidden_field_tag :start_time, @start_time %>
+      <%= hidden_field_tag :score, @score %>
+    <input type="text" class="form-control" name="word" placeholder="your word">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>

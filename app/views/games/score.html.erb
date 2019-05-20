@@ -1,0 +1,6 @@
+<h1>RESULT</h1>
+
+<p><%= @result[:message] %></p>
+<p>Your score is <%= @result[:score] %></p>
+<p><%= @result[:time] %> seconds to complete</p>
+<p><%= link_to "play again", new_path(:score => @result[:score]) %></p>
